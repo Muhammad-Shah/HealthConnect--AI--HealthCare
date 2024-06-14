@@ -1,0 +1,5 @@
+docenv
+doctors_db
+__pycache__
+.env
+data.json
