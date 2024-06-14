@@ -1,0 +1,9 @@
+langchain
+langchain-community
+langchainhub
+langchain-openai 
+langchain-chroma
+sentence_transformers
+langchain_groq 
+langchain-huggingface
+streamlit
