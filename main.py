@@ -36,7 +36,7 @@ llm = ChatGroq(temperature=0.5,
                    "frequency_penalty": 0.0,
                    "presence_penalty": 0.0
                }
-               )
+)
 
 contextualize_q_system_prompt = """Given a chat history and the latest user question \
 which might reference context in the chat history, formulate a standalone question \
