@@ -50,9 +50,9 @@ contextualize_q_prompt = ChatPromptTemplate.from_messages(
     ]
 )
 
-# # Check if retriever is already created
-# if "retriever" not in st.session_state:
-#     st.session_state.retriever = create_embeddings()
+# Check if retriever is already created
+if "retriever" not in st.session_state:
+    st.session_state.retriever = create_embeddings()
 
 # Check if history aware retriever is already created
 if "history_aware_retriever" not in st.session_state:
