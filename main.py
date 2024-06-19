@@ -55,14 +55,14 @@ if "retriever" not in st.session_state:
     st.session_state.retriever = create_embeddings()
 
 # Check if history aware retriever is already created
-# if "history_aware_retriever" not in st.session_state:
-#     st.session_state.history_aware_retriever = create_history_aware_retriever(
-#         llm, st.session_state.retriever, contextualize_q_prompt
-#     )
+if "history_aware_retriever" not in st.session_state:
+    st.session_state.history_aware_retriever = create_history_aware_retriever(
+        llm, st.session_state.retriever, contextualize_q_prompt
+    )
 
-history_aware_retriever = create_history_aware_retriever(
-    llm, st.session_state.retriever, contextualize_q_prompt
-)
+# history_aware_retriever = create_history_aware_retriever(
+#     llm, st.session_state.retriever, contextualize_q_prompt
+# )
 
 
 qa_system_prompt = """
