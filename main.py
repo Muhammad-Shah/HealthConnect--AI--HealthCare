@@ -64,6 +64,17 @@ if "history_aware_retriever" not in st.session_state:
 #     llm, st.session_state.retriever, contextualize_q_prompt
 # )
 
+examples = [
+    {"input": "", "output": ""},
+    {"input": "2+3", "output": "5"},
+    {"input": "2+4", "output": "6"},
+    {"input": "What did the cow say to the moon?", "output": "nothing at all"},
+    {
+        "input": "Write me a poem about the moon",
+        "output": "One for the moon, and one for me, who are we to talk about the moon?",
+    },
+]
+
 
 qa_system_prompt = """
 You are HealthConnect AI, a dedicated and helpful AI assistant focused on assisting patients by providing the best doctor recommendations. 
