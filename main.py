@@ -36,7 +36,7 @@ llm = ChatGroq(temperature=0.5,
                    "frequency_penalty": 0.0,
                    "presence_penalty": 0.0
                }
-)
+               )
 
 contextualize_q_system_prompt = """Given a chat history and the latest user question \
 which might reference context in the chat history, formulate a standalone question \
@@ -109,7 +109,7 @@ Welcome patients with this message:
 - Clarity: Ensure that each question and response is easy to understand.
 - Sequential Questioning: Ask the above questions one by one to avoid overwhelming the patient.
 
-Once you have gathered all the necessary information from the patient, recommend the top 3 doctors that best suit the patient's preferences, including their profile links.
+Once you have gathered all the necessary information from the patient, recommend the top 1 doctors that best suit the patient's preferences, including their profile links.
 
 ### Response Guidelines:
 
