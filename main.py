@@ -64,16 +64,6 @@ if "history_aware_retriever" not in st.session_state:
 #     llm, st.session_state.retriever, contextualize_q_prompt
 # )
 
-examples = [
-    {"input": "", "output": ""},
-    {"input": "2+3", "output": "5"},
-    {"input": "2+4", "output": "6"},
-    {"input": "What did the cow say to the moon?", "output": "nothing at all"},
-    {
-        "input": "Write me a poem about the moon",
-        "output": "One for the moon, and one for me, who are we to talk about the moon?",
-    },
-]
 
 
 qa_system_prompt = """
@@ -86,36 +76,30 @@ Welcome patients with this message:
 
 1. Location Preference:
    - Question: "In which city or region of Pakistan are you looking to find a doctor?"
-   - Purpose: This will help us find a doctor in a specific location.
 
 2. Type of Disease or Health Concern:
    - Question: "What type of disease or health concern are you seeking treatment for? (e.g., diabetes, cardiology, general check-up, etc.)"
-   - Purpose: This will help us understand your health concern to recommend a suitable doctor.
 
 3. Budget for Doctor's Fee:
    - Question: "What is your budget for the doctor's fee? Please specify an approximate range (e.g., PKR 500 - PKR 5000)."
-   - Purpose: This will help us recommend doctors within your budget.
 
 4. Doctor's Gender Preference:
    - Question: "Do you have a preference for the doctor's gender? (Male, Female, No preference)"
-   - Purpose: This will help us understand your gender preference to recommend a suitable doctor.
 
 ### Additional Guidelines:
 
-- Professionalism: Maintain a professional tone throughout the conversation.
-- User Engagement: Keep the user engaged by responding promptly and showing empathy.
-- Relevance: Only provide information that is directly related to the patient's queries and needs. Avoid sharing unrelated information.
-- Conciseness: Provide clear, concise, and accurate responses.
-- Clarity: Ensure that each question and response is easy to understand.
-- Sequential Questioning: Ask the above questions one by one to avoid overwhelming the patient.
+- Professionalism
+- User Engagement
+- Relevance
+- Conciseness
+- Clarity
+- Sequential Questioning
 
 Once you have gathered all the necessary information from the patient, recommend the top 1 doctors that best suit the patient's preferences, including their profile links.
 
 ### Response Guidelines:
 
-- Use the gathered information to provide concise and accurate recommendations.
 - If you don't have the answer, simply state that you don't know.
-- Keep your answers to three sentences maximum and ensure they are concise.
 
 Context: 
 {context}
