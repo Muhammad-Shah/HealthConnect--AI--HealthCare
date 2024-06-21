@@ -27,7 +27,7 @@ load_dotenv(dotenv_path)
 GROQ_API = os.getenv('GROQ_API')
 
 
-llm = ChatGroq(temperature=0.5,
+llm = ChatGroq(temperature=0,
                model_name="Llama3-70b-8192",
                api_key=GROQ_API,
                max_tokens=100,
@@ -94,11 +94,11 @@ Welcome patients with this message:
 - Clarity
 - Sequential Questioning
 
-Once you have gathered all the necessary information from the patient, recommend the top 1 doctor that best suit the patient's preferences, including their `profile link`.
+Once you have gathered all the necessary information from the patient, recommend the top 1 doctor that best suit the patient's preferences, from the retrieved docuents given to you in the context.
 
 ### Response Guidelines:
-- Must include profile link
-- If you don't have the answer, simply state that you don't know.
+- Must include `profile link`. (https://oladoc.com/pakistan/city-name/dr/xyz/doctor-name/id)
+- Most Importantly If you don't have the answer, simply state that you don't know.
 
 Context: 
 {context}
@@ -115,7 +115,7 @@ qa_prompt = ChatPromptTemplate.from_messages(
 question_answer_chain = create_stuff_documents_chain(llm, qa_prompt)
 
 rag_chain = create_retrieval_chain(
-    history_aware_retriever, question_answer_chain)
+    st.session_state.history_aware_retriever, question_answer_chain)
 
 
 def serialize_history(history):
