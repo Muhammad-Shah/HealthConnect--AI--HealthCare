@@ -1,4 +1,5 @@
 langchain
+protobuf==3.20.1
 langchain-community
 langchainhub
 langchain-openai 
