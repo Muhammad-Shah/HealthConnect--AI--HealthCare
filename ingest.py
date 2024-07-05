@@ -36,21 +36,20 @@ def load_embeddings():
 
 def create_embeddings():
     persist_directory = './doctors_db'
+    embeddings_model, docs = load_embeddings()
 
     # Check if the vector store already exists on disk
-    if os.path.exists(os.path.join(persist_directory, "./doctors_db")):
-        print('It shold run...........')
-        st.session_state.db = Chroma.load(persist_directory)
+    if os.path.isdir(os.getcwd() + '/doctors_db'):
+        st.session_state.db = Chroma(persist_directory=persist_directory,
+                                     embedding_function=embeddings_model)
     else:
-        embeddings_model, docs = load_embeddings()
-        print('It shold not run........')
         st.session_state.db = Chroma.from_documents(
             documents=docs,
             embedding=embeddings_model,
             persist_directory=persist_directory
         )
 
-    return st.session_state.db.as_retriever(search_type="similarity", search_kwargs={"k": 3})
+    return st.session_state.db.as_retriever(search_type="similarity", search_kwargs={"k": 5})
 
 # def main():
 #     create_embeddings()
