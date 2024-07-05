@@ -30,7 +30,7 @@ GROQ_API = os.getenv('GROQ_API')
 llm = ChatGroq(temperature=0,
                model_name="Llama3-70b-8192",
                api_key=GROQ_API,
-               max_tokens=100,
+               max_tokens=254,
                model_kwargs={
                    "top_p": 1,
                    "frequency_penalty": 0.0,
@@ -69,7 +69,7 @@ qa_system_prompt = """
 You are an AI assistant focused on assisting patients by providing the best doctor recommendations. 
 
 Welcome patients with this message:
-"Hello! Welcome to HealthConnect AI, your personalized health assistant. I'm here to help you find the best doctor based on your needs and preferences."
+"Hello! Welcome to HealthConnect AI."
 
 ### Instructions:
 
@@ -97,7 +97,9 @@ Welcome patients with this message:
 Once you have gathered all the necessary information from the patient, recommend the top 1 doctor that best suit the patient's preferences, from the retrieved docuents given to you in the context.
 
 ### Response Guidelines:
-- Must include `profile link`. (https://oladoc.com/pakistan/city-name/dr/xyz/doctor-name/id)
+- You must Answer every question from the Provided Context.
+- Must include `Name , profile link`. [Name](https://oladoc.com/pakistan/city-name/dr/xyz/doctor-name/id)
+- You must complete your response.
 - Most Importantly If you don't have the answer, simply state that you don't know.
 
 Context: 
@@ -155,10 +157,10 @@ def chat():
                 # Replace with your response generation logic
                 response = generate_response(
                     st.session_state.messages[-1]["content"], st.session_state.messages)
-                print(st.session_state.messages)
                 st.write(response)
                 st.session_state.messages.append(
                     {"role": "assistant", "content": response})
+                print(st.session_state.messages)
 
 
 if __name__ == '__main__':
