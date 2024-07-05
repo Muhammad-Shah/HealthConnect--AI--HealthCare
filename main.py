@@ -22,9 +22,10 @@ import streamlit as st
 from dotenv import find_dotenv, load_dotenv
 import os
 
-dotenv_path = '.env'
-load_dotenv(dotenv_path)
-GROQ_API = os.getenv('GROQ_API')
+# dotenv_path = '.env'
+# load_dotenv(dotenv_path)
+# GROQ_API = os.getenv('GROQ_API')
+GROQ_API = st.st.secrets["GROQ_API"]
 
 
 llm = ChatGroq(temperature=0,
