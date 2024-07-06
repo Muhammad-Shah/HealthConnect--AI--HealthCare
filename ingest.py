@@ -1,5 +1,6 @@
 __import__('pysqlite3')
-sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+import pysqlite3
+sys.modules['sqlite3'] = sys.modules["pysqlite3"]
 import json
 from pydantic import BaseModel
 from typing import Dict
