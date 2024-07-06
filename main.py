@@ -14,7 +14,7 @@ from ingest import create_embeddings
 # dotenv_path = '.env'
 # load_dotenv(dotenv_path)
 # GROQ_API = os.getenv('GROQ_API')
-GROQ_API = st.st.secrets["GROQ_API"]
+GROQ_API = st.secrets["GROQ_API"]
 
 
 llm = ChatGroq(temperature=0,
