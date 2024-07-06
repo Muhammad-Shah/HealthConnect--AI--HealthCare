@@ -18,9 +18,11 @@ from typing import Dict
 from pydantic import BaseModel
 from ingest import create_embeddings
 import streamlit as st
-
 from dotenv import find_dotenv, load_dotenv
 import os
+import sys
+__import__('pysqlite3')
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 # dotenv_path = '.env'
 # load_dotenv(dotenv_path)
