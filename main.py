@@ -1,4 +1,3 @@
-from ingest import create_embeddings
 from langchain_core.messages import HumanMessage, AIMessage
 from langchain.chains import create_history_aware_retriever, create_retrieval_chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
@@ -10,6 +9,7 @@ import os
 import sys
 __import__('pysqlite3')
 sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+from ingest import create_embeddings
 
 # dotenv_path = '.env'
 # load_dotenv(dotenv_path)
