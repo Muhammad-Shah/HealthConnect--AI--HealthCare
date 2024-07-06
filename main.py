@@ -3,10 +3,11 @@ from langchain.chains import create_history_aware_retriever, create_retrieval_ch
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate, PromptTemplate, MessagesPlaceholder
-import streamlit as st
 from dotenv import find_dotenv, load_dotenv
 import os
 import sys
+import streamlit as st
+
 __import__('pysqlite3')
 sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 from ingest import create_embeddings
