@@ -35,9 +35,9 @@ After starting the application, you can interact with HealthConnect AI by provid
 
 ## Demo
 
-<img src='demo/1.png', alt='Demo picture 1 of the app'>
-<img src='demo/2.png', alt='Demo picture 2 of the app'>
-<img src='demo/3.png', alt='Demo picture 3 of the app'>
+[Demo picture 1 of the app](demo/1.png)
+[Demo picture 2 of the app](demo/2.png)
+[Demo picture 3 of the app](demo/3.png)
 
 ## Contributing
 
