@@ -1,3 +1,4 @@
+import sys
 __import__('pysqlite3')
 import pysqlite3
 sys.modules['sqlite3'] = sys.modules["pysqlite3"]
