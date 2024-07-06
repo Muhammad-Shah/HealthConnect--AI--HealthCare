@@ -145,10 +145,10 @@ def chat():
                 # Replace with your response generation logic
                 response = generate_response(
                     st.session_state.messages[-1]["content"], st.session_state.messages)
-                # st.write(response)
+                st.write(response)
                 st.session_state.messages.append(
                     {"role": "assistant", "content": response})
-                print(st.session_state.messages)
+                # print(st.session_state.messages)
 
 
 if __name__ == '__main__':
