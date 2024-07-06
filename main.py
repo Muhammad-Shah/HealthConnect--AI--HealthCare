@@ -1,9 +1,9 @@
+from ingest import create_embeddings
 from langchain_core.messages import HumanMessage, AIMessage
 from langchain.chains import create_history_aware_retriever, create_retrieval_chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate, PromptTemplate, MessagesPlaceholder
-from ingest import create_embeddings
 import streamlit as st
 from dotenv import find_dotenv, load_dotenv
 import os
