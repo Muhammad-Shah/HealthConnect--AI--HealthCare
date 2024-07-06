@@ -1,21 +1,8 @@
 from langchain_core.messages import HumanMessage, AIMessage
-from langchain_groq import ChatGroq
-from langchain_community.document_loaders import JSONLoader
-from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain.chains import create_history_aware_retriever, create_retrieval_chain
-from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain.chains.combine_documents import create_stuff_documents_chain
-from langchain_core.output_parsers import StrOutputParser
-from langchain_core.runnables import RunnablePassthrough
 from langchain_groq import ChatGroq
-from langchain_core.prompts import ChatPromptTemplate
-from langchain_core.prompts import PromptTemplate
-from langchain_chroma import Chroma
-import json
-from pathlib import Path
-from pprint import pprint, PrettyPrinter
-from typing import Dict
-from pydantic import BaseModel
+from langchain_core.prompts import ChatPromptTemplate, PromptTemplate, MessagesPlaceholder
 from ingest import create_embeddings
 import streamlit as st
 from dotenv import find_dotenv, load_dotenv
