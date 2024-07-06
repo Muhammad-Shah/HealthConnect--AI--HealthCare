@@ -15,20 +15,29 @@ To get started with HealthConnect AI, you can follow these steps:
 ## Features
 
 - Location Preference:
-   - Provide the city or region of Pakistan where you are looking to find a doctor.
+
+  - Provide the city or region of Pakistan where you are looking to find a doctor.
 
 - Type of Disease or Health Concern:
-   - Specify the type of disease or health concern you are seeking treatment for.
+
+  - Specify the type of disease or health concern you are seeking treatment for.
 
 - Budget for Doctor's Fee:
-   - Specify an approximate range for the doctor's fee.
+
+  - Specify an approximate range for the doctor's fee.
 
 - Doctor's Gender Preference:
-   - Specify your preference for the doctor's gender.
+  - Specify your preference for the doctor's gender.
 
 ## Usage
 
 After starting the application, you can interact with HealthConnect AI by providing the necessary information. The AI will guide you through the process and provide recommendations based on your preferences.
+
+## Demo
+
+<img src='demo/1.png', alt='Demo picture 1 of the app'>
+<img src='demo/2.png', alt='Demo picture 2 of the app'>
+<img src='demo/3.png', alt='Demo picture 3 of the app'>
 
 ## Contributing
 
